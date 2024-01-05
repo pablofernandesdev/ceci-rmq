@@ -1,0 +1,457 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CeciRMQ.WebApplication</name>
+    </assembly>
+    <members>
+        <member name="T:CeciRMQ.WebApplication.Controllers.AddressController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AddressController.#ctor(CeciRMQ.Domain.Interfaces.Service.IAddressService)">
+            <summary>
+            
+            </summary>
+            <param name="addressService"></param>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AddressController.GetByZipCode(CeciRMQ.Domain.DTO.Address.AddressZipCodeDTO)">
+            <summary>
+            Get address by zip code
+            </summary>
+            <param name="model"></param>
+            <returns>Success when get the address</returns>
+            <response code="200">Returns success when get address</response>
+            <response code="400">Bad request</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AddressController.Add(CeciRMQ.Domain.DTO.Address.AddressAddDTO)">
+            <summary>
+            Add address
+            </summary>
+            <param name="model"></param>
+            <returns>Success when creating a new address</returns>
+            <response code="200">Returns success when create address</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AddressController.Update(CeciRMQ.Domain.DTO.Address.AddressUpdateDTO)">
+            <summary>
+            Update address
+            </summary>
+            <param name="model"></param>
+            <returns>Success when updating address</returns>
+            <response code="200">Returns success when update address</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AddressController.Delete(CeciRMQ.Domain.DTO.Address.AddressDeleteDTO)">
+            <summary>
+            Delete address
+            </summary>
+            <param name="model"></param>
+            <returns>Success when delete address</returns>
+            <response code="200">Returns success when deleted address</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AddressController.Get(CeciRMQ.Domain.DTO.Address.AddressFilterDTO)">
+            <summary>
+            Get all adresses
+            </summary>
+            <param name="model"></param>
+            <returns>Success when get all adresses</returns>
+            <response code="200">Returns success when get all adresses</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>  
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AddressController.GetById(CeciRMQ.Domain.DTO.Address.AddressIdentifierDTO)">
+            <summary>
+            Get address by id
+            </summary>
+            <param name="model"></param>
+            <returns>Success when get address by id</returns>
+            <response code="200">Returns success when get address by id</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="T:CeciRMQ.WebApplication.Controllers.AuthController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AuthController.#ctor(CeciRMQ.Domain.Interfaces.Service.IAuthService,CeciRMQ.Domain.Interfaces.Service.IValidationCodeService)">
+            <summary>
+            
+            </summary>
+            <param name="authService"></param>
+            <param name="validationCodeService"></param>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AuthController.Auth(CeciRMQ.Domain.DTO.Auth.LoginDTO)">
+            <summary>
+            User authentication
+            </summary>
+            <param name="model"></param>
+            <returns>Basic user data and authentication token</returns>
+            <response code="200">Returns success request autentication</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AuthController.RefreshToken">
+            <summary>
+            Update user authentication token
+            </summary>
+            <returns>Basic user data and authentication token</returns>
+            <response code="200">Returns success request autentication</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AuthController.RevokeToken">
+            <summary>
+            Revoke user authentication token
+            </summary>
+            <returns>Success revoking auth token</returns>
+            <response code="200">Returns success revoking auth token</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AuthController.ForgotPassword(CeciRMQ.Domain.DTO.Auth.ForgotPasswordDTO)">
+            <summary>
+            Request user password recovery
+            </summary>
+            <param name="model"></param>
+            <returns>Success when requesting password recovery</returns>
+            <response code="200">Returns when requesting password recovery</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AuthController.SendValidationCode">
+            <summary>
+            Requests a validation code for the logged in user
+            </summary>
+            <returns>Success when requesting validation code</returns>
+            <response code="200">Returns when requesting validation code</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.AuthController.ValidateValidationCode(CeciRMQ.Domain.DTO.ValidationCode.ValidationCodeValidateDTO)">
+            <summary>
+            Validates the login user's validation code
+            </summary>
+            <param name="model"></param>
+            <returns>Success validating validation code</returns>
+            <response code="200">Returns when validating validation code</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="T:CeciRMQ.WebApplication.Controllers.RegisterController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RegisterController.#ctor(CeciRMQ.Domain.Interfaces.Service.IRegisterService)">
+            <summary>
+            
+            </summary>
+            <param name="registerService"></param>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RegisterController.SelfRegistration(CeciRMQ.Domain.DTO.Register.UserSelfRegistrationDTO)">
+            <summary>
+            User self registration
+            </summary>
+            <param name="model"></param>
+            <returns>Success when creating a new user</returns>
+            <response code="200">Returns success when creating a new item</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RegisterController.UpdateLoggedInUser(CeciRMQ.Domain.DTO.Register.UserLoggedUpdateDTO)">
+            <summary>
+            Update user logged
+            </summary>
+            <param name="model"></param>
+            <returns>Success when updating user logged</returns>
+            <response code="200">Returns success when updating user logged</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RegisterController.GetLoggedInUser">
+            <summary>
+            Get logged in user
+            </summary>
+            <returns>Success when get logged in user</returns>
+            <response code="200">Returns success when get logged in user</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RegisterController.RedefinePassword(CeciRMQ.Domain.DTO.Register.UserRedefinePasswordDTO)">
+            <summary>
+            Redefine user password
+            </summary>
+            <param name="model"></param>
+            <returns>Success when redefine user password</returns>
+            <response code="200">Returns success when redefine user password</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RegisterController.AddLoggedInUserAddressAsync(CeciRMQ.Domain.DTO.Register.AddressLoggedUserAddDTO)">
+            <summary>
+            Add logged user address
+            </summary>
+            <param name="model"></param>
+            <returns>Success when add logged user address</returns>
+            <response code="200">Returns success when add logged user address</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RegisterController.UpdateLoggedInUserAddress(CeciRMQ.Domain.DTO.Register.UserLoggedUpdateDTO)">
+            <summary>
+            Update logged user address
+            </summary>
+            <param name="model"></param>
+            <returns>Success when updating logged user address</returns>
+            <response code="200">Returns success when updating logged user address</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RegisterController.DeleteLoggedInUserAddress(CeciRMQ.Domain.DTO.Address.AddressDeleteDTO)">
+            <summary>
+            Delete logged user address
+            </summary>
+            <param name="model"></param>
+            <returns>Success when deleting logged user address</returns>
+            <response code="200">Returns success when deleting logged user address</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RegisterController.GetLoggedInUserAddresss(CeciRMQ.Domain.DTO.Address.AddressFilterDTO)">
+            <summary>
+            Get logged in user addresses
+            </summary>
+            <param name="model"></param>
+            <returns>Success when get logged in user addresses</returns>
+            <response code="200">Returns success when get logged in user addresses</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RegisterController.GetLoggedInUserAddress(CeciRMQ.Domain.DTO.Address.AddressIdentifierDTO)">
+            <summary>
+            Get logged in user address
+            </summary>
+            <param name="model"></param>
+            <returns>Success when get logged in user address</returns>
+            <response code="200">Returns success when get logged in user address</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="T:CeciRMQ.WebApplication.Controllers.ReportController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.ReportController.#ctor(CeciRMQ.Domain.Interfaces.Service.IReportService)">
+            <summary>
+            
+            </summary>
+            <param name="reportService"></param>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.ReportController.GenerateUsersReport(CeciRMQ.Domain.DTO.User.UserFilterDTO)">
+            <summary>
+            Get the users report according to the filter
+            </summary>
+            <returns>Success when get the users report</returns>
+            <response code="200">Returns success when get the users report</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="T:CeciRMQ.WebApplication.Controllers.RoleController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RoleController.#ctor(CeciRMQ.Domain.Interfaces.Service.IRoleService)">
+            <summary>
+            
+            </summary>
+            <param name="roleService"></param>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RoleController.Add(CeciRMQ.Domain.DTO.Role.RoleAddDTO)">
+            <summary>
+            Add role
+            </summary>
+            <param name="model"></param>
+            <returns>Success when creating a new role</returns>
+            <response code="200">Returns success when create role</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RoleController.Update(CeciRMQ.Domain.DTO.Role.RoleUpdateDTO)">
+            <summary>
+            Update role
+            </summary>
+            <param name="model"></param>
+            <returns>Success when updating role</returns>
+            <response code="200">Returns success when update role</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RoleController.Delete(CeciRMQ.Domain.DTO.Role.RoleDeleteDTO)">
+            <summary>
+            Delete role
+            </summary>
+            <param name="model"></param>
+            <returns>Success when delete role</returns>
+            <response code="200">Returns success when deleted role</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RoleController.Get">
+            <summary>
+            Get all roles
+            </summary>
+            <returns>Success when get all roles</returns>
+            <response code="200">Returns success when get all roles</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.RoleController.GetById(CeciRMQ.Domain.DTO.Role.IdentifierRoleDTO)">
+            <summary>
+            Get role by id
+            </summary>
+            <returns>Success when get role by id</returns>
+            <response code="200">Returns success when get role by id</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="T:CeciRMQ.WebApplication.Controllers.UserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.UserController.#ctor(CeciRMQ.Domain.Interfaces.Service.IUserService,CeciRMQ.Domain.Interfaces.Service.IImportService)">
+            <summary>
+            
+            </summary>
+            <param name="userService"></param>
+            <param name="importService"></param>
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.UserController.Add(CeciRMQ.Domain.DTO.User.UserAddDTO)">
+            <summary>
+            Add new user
+            </summary>
+            <param name="model"></param>
+            <returns>Success when creating a new user</returns>
+            <response code="200">Returns success when creating a new item</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.UserController.Update(CeciRMQ.Domain.DTO.User.UserUpdateDTO)">
+            <summary>
+            Update user
+            </summary>
+            <param name="model"></param>
+            <returns>Success when updating user</returns>
+            <response code="200">Returns success when updating user</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.UserController.UpdateRole(CeciRMQ.Domain.DTO.User.UserUpdateRoleDTO)">
+            <summary>
+            Update user role
+            </summary>
+            <param name="model"></param>
+            <returns>Success when updating user role</returns>
+            <response code="200">Returns success when updating user role</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.UserController.Delete(CeciRMQ.Domain.DTO.User.UserDeleteDTO)">
+            <summary>
+            Delete user
+            </summary>
+            <param name="model"></param>
+            <returns>Success when delete user</returns>
+            <response code="200">Returns success when deleted user</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.UserController.Get(CeciRMQ.Domain.DTO.User.UserFilterDTO)">
+            <summary>
+            Get all users
+            </summary>
+            <returns>Success when get all users</returns>
+            <response code="200">Returns success when get all users</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.UserController.GetById(CeciRMQ.Domain.DTO.User.UserIdentifierDTO)">
+            <summary>
+            Get user by id
+            </summary>
+            <returns>Success when get user by id</returns>
+            <response code="200">Returns success when get user by id</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+        <member name="M:CeciRMQ.WebApplication.Controllers.UserController.Import(CeciRMQ.Domain.DTO.Import.FileUploadDTO)">
+            <summary>
+            Import users
+            </summary>
+            <param name="model"></param>
+            <returns>Success when import users</returns>
+            <response code="200">Returns success when import users</response>
+            <response code="400">Returns error if the request fails</response>
+            <response code="401">Not authorized</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal server error</response>   
+        </member>
+    </members>
+</doc>
